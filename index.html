@@ -155,18 +155,22 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--cream3); border-radius: 3px; }
+.drug-panels p { font-size: 12.5px; color: var(--ink2); line-height: 1.55; margin: 4px 0 8px 0; }
+.drug-panels ul, .drug-panels ol { font-size: 12.5px; color: var(--ink2); padding-left: 16px; margin: 4px 0 8px 0; }
+.drug-panels li { margin-bottom: 3px; line-height: 1.55; }
+.drug-panels p strong { color: var(--ink); }
 </style>
 </head>
 <body>
 
 <header>
   <div class="logo">💊 Répertoire <span>Médicaments</span> — IPS</div>
-  <span class="drug-count">93 molécules</span>
+  <span class="drug-count">114 molécules</span>
   <input type="text" id="search-input" placeholder="🔍  Rechercher un médicament, une classe…" oninput="filterDrugs(this.value)">
 </header>
 
 <div class="layout">
-  <aside id="sidebar"><div class="sidebar-section"><div class="sidebar-cat">🫀 Bêta-bloquants</div><button class="sidebar-btn" onclick="goTo('bisoprolol')">Bisoprolol (Monocor®)</button><button class="sidebar-btn" onclick="goTo('metoprolol')">Métoprolol succinate (Toprol-XL®)</button><button class="sidebar-btn" onclick="goTo('carvedilol')">Carvedilol (Coreg®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🛡️ IEC / IECA</div><button class="sidebar-btn" onclick="goTo('ramipril')">Ramipril (Altace®)</button><button class="sidebar-btn" onclick="goTo('perindopril')">Périndopril (Coversyl®)</button><button class="sidebar-btn" onclick="goTo('lisinopril')">Lisinopril (Zestril®/Prinivil®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🔵 ARA II</div><button class="sidebar-btn" onclick="goTo('losartan')">Losartan (Cozaar®)</button><button class="sidebar-btn" onclick="goTo('candesartan')">Candésartan (Atacand®)</button><button class="sidebar-btn" onclick="goTo('valsartan')">Valsartan (Diovan®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💧 Diurétiques</div><button class="sidebar-btn" onclick="goTo('furosemide')">Furosémide (Lasix®)</button><button class="sidebar-btn" onclick="goTo('spironolactone')">Spironolactone (Aldactone®)</button><button class="sidebar-btn" onclick="goTo('hctz')">Hydrochlorothiazide (HydroDIURIL®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🔶 Antagonistes calciques</div><button class="sidebar-btn" onclick="goTo('amlodipine')">Amlodipine (Norvasc®)</button><button class="sidebar-btn" onclick="goTo('diltiazem')">Diltiazem (Cardizem®/Tiazac®)</button><button class="sidebar-btn" onclick="goTo('verapamil')">Vérapamil (Isoptin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💛 Nitrates</div><button class="sidebar-btn" onclick="goTo('nitroglycerin')">Nitroglycérine (Nitrostat®/Nitro-Dur®)</button><button class="sidebar-btn" onclick="goTo('isosorbide')">Isosorbide-5-mononitrate (Imdur®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🩸 Anticoagulants</div><button class="sidebar-btn" onclick="goTo('rivaroxaban')">Rivaroxaban (Xarelto®)</button><button class="sidebar-btn" onclick="goTo('apixaban')">Apixaban (Eliquis®)</button><button class="sidebar-btn" onclick="goTo('dabigatran')">Dabigatran (Pradaxa®)</button><button class="sidebar-btn" onclick="goTo('warfarine')">Warfarine (Coumadin®)</button><button class="sidebar-btn" onclick="goTo('enoxaparine')">Énoxaparine (Lovenox®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🔴 Antiplaquettaires</div><button class="sidebar-btn" onclick="goTo('aspirine')">Aspirine (AAS)</button><button class="sidebar-btn" onclick="goTo('clopidogrel')">Clopidogrel (Plavix®)</button><button class="sidebar-btn" onclick="goTo('ticagrelor')">Ticagrélor (Brilinta®)</button></div><div class="sidebar-section"><div class="sidebar-cat">📉 Statines</div><button class="sidebar-btn" onclick="goTo('atorvastatin')">Atorvastatine (Lipitor®)</button><button class="sidebar-btn" onclick="goTo('rosuvastatin')">Rosuvastatine (Crestor®)</button></div><div class="sidebar-section"><div class="sidebar-cat">⚡ Antiarythmiques / ARNI</div><button class="sidebar-btn" onclick="goTo('amiodarone')">Amiodarone (Cordarone®)</button><button class="sidebar-btn" onclick="goTo('digoxin')">Digoxine (Lanoxin®)</button><button class="sidebar-btn" onclick="goTo('ivabradine')">Ivabradine (Lancora®/Corlanor®)</button><button class="sidebar-btn" onclick="goTo('entresto')">Sacubitril/Valsartan (Entresto®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💉 Vasopresseurs / Inotropes</div><button class="sidebar-btn" onclick="goTo('norepinephrine')">Norépinéphrine (Levophed®)</button><button class="sidebar-btn" onclick="goTo('epinephrine')">Adrénaline (Épinéphrine)</button><button class="sidebar-btn" onclick="goTo('dobutamine')">Dobutamine (Dobutrex®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💨 BACA</div><button class="sidebar-btn" onclick="goTo('salbutamol')">Salbutamol (Ventolin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🌬️ LAMA</div><button class="sidebar-btn" onclick="goTo('tiotropium')">Tiotropium (Spiriva®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🌿 CSI / ICS-LABA</div><button class="sidebar-btn" onclick="goTo('budesonide')">Budésonide (Pulmicort®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🫁 HTAP / Antifibrotiques</div><button class="sidebar-btn" onclick="goTo('sildenafil_htap')">Sildénafil/Tadalafil (Revatio®/Adcirca®)</button><button class="sidebar-btn" onclick="goTo('bosentan')">Bosentan (Tracleer®) / Ambrisentan (Volibris®) / Macitentan (Opsumit®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🍬 Antidiabétiques</div><button class="sidebar-btn" onclick="goTo('metformin')">Metformine (Glucophage®)</button><button class="sidebar-btn" onclick="goTo('empagliflozin')">Empagliflozine (Jardiance®)</button><button class="sidebar-btn" onclick="goTo('semaglutide')">Sémaglutide (Ozempic®/Wegovy®/Rybelsus®)</button><button class="sidebar-btn" onclick="goTo('sitagliptin')">Sitagliptine (Januvia®)</button><button class="sidebar-btn" onclick="goTo('dapagliflozin')">Dapagliflozine (Farxiga®) / Canagliflozine (Invokana®)</button><button class="sidebar-btn" onclick="goTo('liraglutide')">Liraglutide (Victoza®, Saxenda®) / Dulaglutide (Trulicity®)</button><button class="sidebar-btn" onclick="goTo('insulines')">Insulines (Basale, Rapide, Ultra-rapide)</button></div><div class="sidebar-section"><div class="sidebar-cat">🟡 IPP</div><button class="sidebar-btn" onclick="goTo('omeprazole')">Oméprazole (Losec®)</button><button class="sidebar-btn" onclick="goTo('pantoprazole')">Pantoprazole (Pantoloc®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🦠 Antibiotiques</div><button class="sidebar-btn" onclick="goTo('amoxicillin')">Amoxicilline (Amoxil®)</button><button class="sidebar-btn" onclick="goTo('azithromycin')">Azithromycine (Zithromax®)</button><button class="sidebar-btn" onclick="goTo('ciprofloxacin')">Ciprofloxacine (Cipro®)</button><button class="sidebar-btn" onclick="goTo('ceftriaxone')">Ceftriaxone (Rocephin®)</button><button class="sidebar-btn" onclick="goTo('vancomycin')">Vancomycine</button><button class="sidebar-btn" onclick="goTo('meropenem')">Méropénem (Merrem®)</button><button class="sidebar-btn" onclick="goTo('pip_tazo')">Pipéracilline-Tazobactam (Tazocin®)</button><button class="sidebar-btn" onclick="goTo('clarithromycine')">Clarithromycine (Biaxin®)</button><button class="sidebar-btn" onclick="goTo('levofloxacine')">Lévofloxacine (Levaquin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💊 Opioïdes & Analgésiques</div><button class="sidebar-btn" onclick="goTo('morphine')">Morphine (Statex®/M-Eslon®)</button><button class="sidebar-btn" onclick="goTo('hydromorphone')">Hydromorphone (Dilaudid®)</button><button class="sidebar-btn" onclick="goTo('fentanyl')">Fentanyl (Duragesic®/Actiq®)</button><button class="sidebar-btn" onclick="goTo('naloxone')">Naloxone (Narcan®)</button><button class="sidebar-btn" onclick="goTo('tramadol')">Tramadol (Ultram®, Zytram®)</button><button class="sidebar-btn" onclick="goTo('oxycodone')">Oxycodone (OxyNEO®, Percocet®)</button><button class="sidebar-btn" onclick="goTo('codeine')">Codéine</button></div><div class="sidebar-section"><div class="sidebar-cat">🧠 Psychotropes</div><button class="sidebar-btn" onclick="goTo('escitalopram')">Escitalopram (Cipralex®)</button><button class="sidebar-btn" onclick="goTo('venlafaxine')">Venlafaxine (Effexor XR®)</button><button class="sidebar-btn" onclick="goTo('quetiapine')">Quétiapine (Seroquel®)</button><button class="sidebar-btn" onclick="goTo('lorazepam')">Lorazépam (Ativan®)</button><button class="sidebar-btn" onclick="goTo('fluoxetine')">Fluoxétine (Prozac®)</button><button class="sidebar-btn" onclick="goTo('duloxetine')">Duloxétine (Cymbalta®)</button><button class="sidebar-btn" onclick="goTo('bupropion')">Bupropion (Wellbutrin®, Zyban®)</button><button class="sidebar-btn" onclick="goTo('mirtazapine')">Mirtazapine (Remeron®)</button><button class="sidebar-btn" onclick="goTo('risperidone')">Rispéridone (Risperdal®)</button><button class="sidebar-btn" onclick="goTo('lithium')">Lithium (Lithane®)</button><button class="sidebar-btn" onclick="goTo('valproate')">Valproate / Divalproex (Epival®)</button><button class="sidebar-btn" onclick="goTo('gabapentin')">Gabapentine (Neurontin®) / Prégabaline (Lyrica®)</button><button class="sidebar-btn" onclick="goTo('benzodiazepines_cz')">Clonazépam (Rivotril®) / Alprazolam (Xanax®)</button><button class="sidebar-btn" onclick="goTo('zolpidem')">Zolpidem (Sublinox®, Ambien®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🦋 Thyroïde</div><button class="sidebar-btn" onclick="goTo('levothyroxine')">Lévothyroxine (Synthroid®/Eltroxin®)</button><button class="sidebar-btn" onclick="goTo('methimazole')">Méthimazole (Tapazole®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🦴 Rhumatologie</div><button class="sidebar-btn" onclick="goTo('colchicine')">Colchicine (Colcrys®)</button><button class="sidebar-btn" onclick="goTo('allopurinol')">Allopurinol (Zyloprim®)</button><button class="sidebar-btn" onclick="goTo('methotrexate')">Méthotrexate (Rheumatrex®)</button><button class="sidebar-btn" onclick="goTo('prednisone')">Prednisone / Méthylprednisolone</button><button class="sidebar-btn" onclick="goTo('hydroxychloroquine')">Hydroxychloroquine (Plaquenil®)</button><button class="sidebar-btn" onclick="goTo('adalimumab')">Adalimumab (Humira®) / Infliximab (Remicade®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💎 Ostéoporose</div><button class="sidebar-btn" onclick="goTo('alendronate')">Alendronate (Fosamax®)</button><button class="sidebar-btn" onclick="goTo('denosumab')">Dénosumab (Prolia®/Xgeva®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🎗️ Oncologie</div><button class="sidebar-btn" onclick="goTo('pembrolizumab')">Pembrolizumab (Keytruda®)</button><button class="sidebar-btn" onclick="goTo('osimertinib')">Osimertinib (Tagrisso®)</button><button class="sidebar-btn" onclick="goTo('carboplatin')">Carboplatine + Paclitaxel (CBDCA/PTX)</button><button class="sidebar-btn" onclick="goTo('nintedanib')">Nintédanib (Ofev®) / Pirfénidone (Esbriet®)</button></div></aside>
+  <aside id="sidebar"><div class="sidebar-section"><div class="sidebar-cat">🫀 Bêta-bloquants</div><button class="sidebar-btn" onclick="goTo('bisoprolol')">Bisoprolol (Monocor®)</button><button class="sidebar-btn" onclick="goTo('metoprolol')">Métoprolol succinate (Toprol-XL®)</button><button class="sidebar-btn" onclick="goTo('carvedilol')">Carvedilol (Coreg®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🛡️ IEC / IECA</div><button class="sidebar-btn" onclick="goTo('ramipril')">Ramipril (Altace®)</button><button class="sidebar-btn" onclick="goTo('perindopril')">Périndopril (Coversyl®)</button><button class="sidebar-btn" onclick="goTo('lisinopril')">Lisinopril (Zestril®/Prinivil®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🔵 ARA II</div><button class="sidebar-btn" onclick="goTo('losartan')">Losartan (Cozaar®)</button><button class="sidebar-btn" onclick="goTo('candesartan')">Candésartan (Atacand®)</button><button class="sidebar-btn" onclick="goTo('valsartan')">Valsartan (Diovan®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💧 Diurétiques</div><button class="sidebar-btn" onclick="goTo('furosemide')">Furosémide (Lasix®)</button><button class="sidebar-btn" onclick="goTo('spironolactone')">Spironolactone (Aldactone®)</button><button class="sidebar-btn" onclick="goTo('hctz')">Hydrochlorothiazide (HydroDIURIL®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🔶 Antagonistes calciques</div><button class="sidebar-btn" onclick="goTo('amlodipine')">Amlodipine (Norvasc®)</button><button class="sidebar-btn" onclick="goTo('diltiazem')">Diltiazem (Cardizem®/Tiazac®)</button><button class="sidebar-btn" onclick="goTo('verapamil')">Vérapamil (Isoptin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💛 Nitrates</div><button class="sidebar-btn" onclick="goTo('nitroglycerin')">Nitroglycérine (Nitrostat®/Nitro-Dur®)</button><button class="sidebar-btn" onclick="goTo('isosorbide')">Isosorbide-5-mononitrate (Imdur®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🩸 Anticoagulants</div><button class="sidebar-btn" onclick="goTo('rivaroxaban')">Rivaroxaban (Xarelto®)</button><button class="sidebar-btn" onclick="goTo('apixaban')">Apixaban (Eliquis®)</button><button class="sidebar-btn" onclick="goTo('dabigatran')">Dabigatran (Pradaxa®)</button><button class="sidebar-btn" onclick="goTo('warfarine')">Warfarine (Coumadin®)</button><button class="sidebar-btn" onclick="goTo('enoxaparine')">Énoxaparine (Lovenox®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🔴 Antiplaquettaires</div><button class="sidebar-btn" onclick="goTo('aspirine')">Aspirine (AAS)</button><button class="sidebar-btn" onclick="goTo('clopidogrel')">Clopidogrel (Plavix®)</button><button class="sidebar-btn" onclick="goTo('ticagrelor')">Ticagrélor (Brilinta®)</button></div><div class="sidebar-section"><div class="sidebar-cat">📉 Statines</div><button class="sidebar-btn" onclick="goTo('atorvastatin')">Atorvastatine (Lipitor®)</button><button class="sidebar-btn" onclick="goTo('rosuvastatin')">Rosuvastatine (Crestor®)</button></div><div class="sidebar-section"><div class="sidebar-cat">⚡ Antiarythmiques / ARNI</div><button class="sidebar-btn" onclick="goTo('amiodarone')">Amiodarone (Cordarone®)</button><button class="sidebar-btn" onclick="goTo('digoxin')">Digoxine (Lanoxin®)</button><button class="sidebar-btn" onclick="goTo('ivabradine')">Ivabradine (Lancora®/Corlanor®)</button><button class="sidebar-btn" onclick="goTo('entresto')">Sacubitril/Valsartan (Entresto®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💉 Vasopresseurs / Inotropes</div><button class="sidebar-btn" onclick="goTo('norepinephrine')">Norépinéphrine (Levophed®)</button><button class="sidebar-btn" onclick="goTo('epinephrine')">Adrénaline (Épinéphrine)</button><button class="sidebar-btn" onclick="goTo('dobutamine')">Dobutamine (Dobutrex®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💨 BACA</div><button class="sidebar-btn" onclick="goTo('salbutamol')">Salbutamol (Ventolin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🌬️ LAMA</div><button class="sidebar-btn" onclick="goTo('tiotropium')">Tiotropium (Spiriva®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🌿 CSI / ICS-LABA</div><button class="sidebar-btn" onclick="goTo('budesonide')">Budésonide (Pulmicort®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🫁 HTAP / Antifibrotiques</div><button class="sidebar-btn" onclick="goTo('sildenafil_htap')">Sildénafil/Tadalafil (Revatio®/Adcirca®)</button><button class="sidebar-btn" onclick="goTo('bosentan')">Bosentan (Tracleer®) / Ambrisentan (Volibris®) / Macitentan (Opsumit®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🍬 Antidiabétiques</div><button class="sidebar-btn" onclick="goTo('metformin')">Metformine (Glucophage®)</button><button class="sidebar-btn" onclick="goTo('empagliflozin')">Empagliflozine (Jardiance®)</button><button class="sidebar-btn" onclick="goTo('semaglutide')">Sémaglutide (Ozempic®/Wegovy®/Rybelsus®)</button><button class="sidebar-btn" onclick="goTo('sitagliptin')">Sitagliptine (Januvia®)</button><button class="sidebar-btn" onclick="goTo('dapagliflozin')">Dapagliflozine (Farxiga®) / Canagliflozine (Invokana®)</button><button class="sidebar-btn" onclick="goTo('liraglutide')">Liraglutide (Victoza®, Saxenda®) / Dulaglutide (Trulicity®)</button><button class="sidebar-btn" onclick="goTo('insulines')">Insulines (Basale, Rapide, Ultra-rapide)</button></div><div class="sidebar-section"><div class="sidebar-cat">🟡 Anti-acides &amp; IPP</div><button class="sidebar-btn" onclick="goTo('omeprazole')">Oméprazole (Losec®)</button><button class="sidebar-btn" onclick="goTo('pantoprazole')">Pantoprazole (Pantoloc®)</button><button class="sidebar-btn" onclick="goTo('esomeprazole')">Ésoméprazole (Nexium®)</button><button class="sidebar-btn" onclick="goTo('lansoprazole')">Lansoprazole (Prevacid®)</button><button class="sidebar-btn" onclick="goTo('rabeprazole')">Rabéprazole (Pariet®)</button><button class="sidebar-btn" onclick="goTo('dexlansoprazole')">Dexlansoprazole (Dexilant®)</button><button class="sidebar-btn" onclick="goTo('famotidine')">Famotidine (Pepcid®)</button><button class="sidebar-btn" onclick="goTo('antiacides')">Antiacides (Tums/Diovol/Gaviscon)</button><button class="sidebar-btn" onclick="goTo('sucralfate')">Sucralfate (Sulcrate®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🦠 Antibiotiques</div><button class="sidebar-btn" onclick="goTo('amoxicillin')">Amoxicilline (Amoxil®)</button><button class="sidebar-btn" onclick="goTo('azithromycin')">Azithromycine (Zithromax®)</button><button class="sidebar-btn" onclick="goTo('ciprofloxacin')">Ciprofloxacine (Cipro®)</button><button class="sidebar-btn" onclick="goTo('ceftriaxone')">Ceftriaxone (Rocephin®)</button><button class="sidebar-btn" onclick="goTo('vancomycin')">Vancomycine</button><button class="sidebar-btn" onclick="goTo('meropenem')">Méropénem (Merrem®)</button><button class="sidebar-btn" onclick="goTo('pip_tazo')">Pipéracilline-Tazobactam (Tazocin®)</button><button class="sidebar-btn" onclick="goTo('clarithromycine')">Clarithromycine (Biaxin®)</button><button class="sidebar-btn" onclick="goTo('levofloxacine')">Lévofloxacine (Levaquin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💊 Opioïdes & Analgésiques</div><button class="sidebar-btn" onclick="goTo('morphine')">Morphine (Statex®/M-Eslon®)</button><button class="sidebar-btn" onclick="goTo('hydromorphone')">Hydromorphone (Dilaudid®)</button><button class="sidebar-btn" onclick="goTo('fentanyl')">Fentanyl (Duragesic®/Actiq®)</button><button class="sidebar-btn" onclick="goTo('naloxone')">Naloxone (Narcan®)</button><button class="sidebar-btn" onclick="goTo('tramadol')">Tramadol (Ultram®, Zytram®)</button><button class="sidebar-btn" onclick="goTo('oxycodone')">Oxycodone (OxyNEO®, Percocet®)</button><button class="sidebar-btn" onclick="goTo('codeine')">Codéine</button></div><div class="sidebar-section"><div class="sidebar-cat">🧠 Psychotropes</div><button class="sidebar-btn" onclick="goTo('escitalopram')">Escitalopram (Cipralex®)</button><button class="sidebar-btn" onclick="goTo('venlafaxine')">Venlafaxine (Effexor XR®)</button><button class="sidebar-btn" onclick="goTo('quetiapine')">Quétiapine (Seroquel®)</button><button class="sidebar-btn" onclick="goTo('lorazepam')">Lorazépam (Ativan®)</button><button class="sidebar-btn" onclick="goTo('fluoxetine')">Fluoxétine (Prozac®)</button><button class="sidebar-btn" onclick="goTo('duloxetine')">Duloxétine (Cymbalta®)</button><button class="sidebar-btn" onclick="goTo('bupropion')">Bupropion (Wellbutrin®, Zyban®)</button><button class="sidebar-btn" onclick="goTo('mirtazapine')">Mirtazapine (Remeron®)</button><button class="sidebar-btn" onclick="goTo('risperidone')">Rispéridone (Risperdal®)</button><button class="sidebar-btn" onclick="goTo('lithium')">Lithium (Lithane®)</button><button class="sidebar-btn" onclick="goTo('valproate')">Valproate / Divalproex (Epival®)</button><button class="sidebar-btn" onclick="goTo('gabapentin')">Gabapentine (Neurontin®) / Prégabaline (Lyrica®)</button><button class="sidebar-btn" onclick="goTo('benzodiazepines_cz')">Clonazépam (Rivotril®) / Alprazolam (Xanax®)</button><button class="sidebar-btn" onclick="goTo('zolpidem')">Zolpidem (Sublinox®, Ambien®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🦋 Thyroïde</div><button class="sidebar-btn" onclick="goTo('levothyroxine')">Lévothyroxine (Synthroid®/Eltroxin®)</button><button class="sidebar-btn" onclick="goTo('methimazole')">Méthimazole (Tapazole®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🦴 Rhumatologie</div><button class="sidebar-btn" onclick="goTo('colchicine')">Colchicine (Colcrys®)</button><button class="sidebar-btn" onclick="goTo('allopurinol')">Allopurinol (Zyloprim®)</button><button class="sidebar-btn" onclick="goTo('methotrexate')">Méthotrexate (Rheumatrex®)</button><button class="sidebar-btn" onclick="goTo('prednisone')">Prednisone / Méthylprednisolone</button><button class="sidebar-btn" onclick="goTo('hydroxychloroquine')">Hydroxychloroquine (Plaquenil®)</button><button class="sidebar-btn" onclick="goTo('adalimumab')">Adalimumab (Humira®) / Infliximab (Remicade®)</button></div><div class="sidebar-section"><div class="sidebar-cat">💎 Ostéoporose</div><button class="sidebar-btn" onclick="goTo('alendronate')">Alendronate (Fosamax®)</button><button class="sidebar-btn" onclick="goTo('denosumab')">Dénosumab (Prolia®/Xgeva®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🎗️ Oncologie</div><button class="sidebar-btn" onclick="goTo('pembrolizumab')">Pembrolizumab (Keytruda®)</button><button class="sidebar-btn" onclick="goTo('osimertinib')">Osimertinib (Tagrisso®)</button><button class="sidebar-btn" onclick="goTo('carboplatin')">Carboplatine + Paclitaxel (CBDCA/PTX)</button><button class="sidebar-btn" onclick="goTo('nintedanib')">Nintédanib (Ofev®) / Pirfénidone (Esbriet®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🛒 MVL — Analgésiques</div><button class="sidebar-btn" onclick="goTo('acetaminophen')">Acétaminophène (Tylenol®)</button><button class="sidebar-btn" onclick="goTo('ains_mvl')">AINS MVL (Advil/Aleve/AAS)</button><button class="sidebar-btn" onclick="goTo('methocarbamol')">Méthocarbamol (Robaxin®)</button></div><div class="sidebar-section"><div class="sidebar-cat">🤧 MVL — Rhume &amp; Allergie</div><button class="sidebar-btn" onclick="goTo('decongestionnants')">Décongestionnants (Sudafed/Otrivin)</button><button class="sidebar-btn" onclick="goTo('antitussifs')">Antitussifs (DXM/Guaifénésine)</button><button class="sidebar-btn" onclick="goTo('antihistaminiques_mvl')">Antihistaminiques MVL (Réactin/Claritin)</button><button class="sidebar-btn" onclick="goTo('cs_nasaux')">Corticostéroïdes nasaux (Flonase/Nasonex)</button></div><div class="sidebar-section"><div class="sidebar-cat">🫃 MVL — Gastro-intestinal</div><button class="sidebar-btn" onclick="goTo('loperamide')">Lopéramide (Imodium®)</button><button class="sidebar-btn" onclick="goTo('laxatifs_mvl')">Laxatifs MVL (Metamucil/Lax-A-Day)</button></div><div class="sidebar-section"><div class="sidebar-cat">🧴 MVL — Dermatologie</div><button class="sidebar-btn" onclick="goTo('hydrocortisone_topique')">Hydrocortisone topique</button><button class="sidebar-btn" onclick="goTo('antifongiques_topiques')">Antifongiques topiques (Canesten)</button></div><div class="sidebar-section"><div class="sidebar-cat">🌿 Produits de santé naturels</div><button class="sidebar-btn" onclick="goTo('millepertuis')">Millepertuis (St-John's Wort)</button><button class="sidebar-btn" onclick="goTo('psn_interactions')">Interactions vitamines/minéraux</button><button class="sidebar-btn" onclick="goTo('psn_populaires')">PSN populaires (Ashwagandha/Créatine)</button></div></aside>
   <main id="main-content">
     
 <div class="drug-card" id="card-bisoprolol" data-search="bisoprolol bisoprolol (monocor®) bisoprolol fumarate bêta-bloquant β₁-sélectif">
@@ -3144,7 +3148,639 @@ td.pk-label { font-weight: 600; color: var(--ink3); width: 200px; white-space: n
 <div class="info-grid"><div class="info-box "><h4>Interactions</h4><ul><li>Alcool : ↑↑ DRS + sédation</li><li>Opioïdes : ↑ DRS</li><li>Inhibiteurs CYP3A4 (kéto, clarithro, ritonavir) : ↑ zolpidem</li><li>Inducteurs CYP3A4 (rifampicine, St-John's wort) : ↓ zolpidem</li><li>Flumazénil : antagoniste partiel BZD (peut partiellement reverser zolpidem)</li></ul></div><div class="info-box blue"><h4>Notes IPS</h4><ul><li>TCC-I (Thérapie Cognitive-Comportementale Insomnie) : supérieure aux médicaments long terme — référer si dispo</li><li>Femmes : dose recommandée 5 mg (pas 10 mg) — métabolisme plus lent, ↑ somnolence matinale</li><li>Avertir patient parasomnies avant de conduire ou activités risquées (&gt;8h de sommeil min)</li><li>Arrêt : réduire progressivement (insomnie de rebond 1–3 nuits → transitoire)</li></ul></div></div>
 </div></div>
 </div>
-  </main>
+  <!-- ══ ANTI-ACIDES SUPPLÉMENTAIRES ══════════════════════════════════════════ -->
+
+<div class="drug-card" id="card-esomeprazole" data-search="esomeprazole ésoméprazole nexium ipp inhibiteur pompe protons">
+  <div class="drug-header" style="background:#7b3fa0;">
+    <div><div class="drug-name">Ésoméprazole (Nexium®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Ésoméprazole magnésium</div></div>
+    <div class="drug-pharmacol">IPP — S-isomère de l'oméprazole</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('esomeprazole','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('esomeprazole','doses',this)">Doses & formes</button><button class="tab-btn" onclick="showTab('esomeprazole','es',this)">Effets secondaires</button><button class="tab-btn" onclick="showTab('esomeprazole','ci',this)">Contre-indications</button><button class="tab-btn" onclick="showTab('esomeprazole','suivi',this)">Suivi</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="esomeprazole-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Liaison covalente irréversible à la H⁺/K⁺-ATPase (pompe à protons) → blocage complet de la sécrétion de HCl. Pro-médicament activé par l'acide gastrique. S-isomère de l'oméprazole → biodisponibilité supérieure.</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>RGO / œsophagite érosive (efficacité supérieure 40 mg vs oméprazole 20 mg)</li><li>UGD — traitement et prévention</li><li>Éradication H. pylori (en combinaison)</li><li>HDH — maintien après phase IV aiguë</li><li>Prévention AINS-gastropathie</li></ul></div>
+      </div>
+      <div class="key-fact">⏱️ Prendre <strong>30–60 min AVANT le premier repas</strong> — pompes activées par la nourriture, biodisponibilité maximale à jeun</div>
+      <div class="key-fact" style="border-left-color:#f59e0b;">📌 Métabolisme CYP2C19 — polymorphisme génétique modifie l'efficacité. Métaboliseurs lents (asiatiques ++) → concentration ↑↑. Rabéprazole = moins dépendant (métabolisme non enzymatique majoritaire).</div>
+    </div>
+    <div class="tab-panel" id="esomeprazole-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th><th>Durée</th></tr></thead><tbody>
+        <tr><td>RGO léger/modéré</td><td>20 mg DIE</td><td>4 semaines</td></tr>
+        <tr><td>Œsophagite érosive</td><td>40 mg DIE</td><td>4–8 semaines</td></tr>
+        <tr><td>Maintien RGO</td><td>20 mg DIE</td><td>Long terme</td></tr>
+        <tr><td>UGD - H. pylori</td><td>40 mg BID × 10–14j</td><td>En triple/quadrithérapie</td></tr>
+        <tr><td>HDH (phase PO)</td><td>40 mg BID × 2 sem. → DIE</td><td>Selon risque</td></tr>
+        <tr><td>Prévention AINS</td><td>20 mg DIE</td><td>Durée du traitement AINS</td></tr>
+      </tbody></table>
+      <div class="key-fact">💊 Formes disponibles : capsules 20/40 mg, granules pour suspension, IV 40 mg</div>
+    </div>
+    <div class="tab-panel" id="esomeprazole-es">
+      <div class="info-grid">
+        <div class="info-box orange"><h4>Effets indésirables fréquents</h4><ul><li>Céphalée, diarrhée, nausées, flatulence</li><li>↓ absorption B12, magnésium, calcium (usage prolongé)</li><li>↑ risque SIBO, infections entériques</li></ul></div>
+        <div class="info-box red"><h4>Risques long terme</h4><ul><li>Hypomagnésémie (> 1 an) → tétanie, arythmies</li><li>↑ risque fractures ostéoporotiques (> 1 an, doses élevées)</li><li>↑ risque C. difficile</li><li>Néphrite interstitielle (rare)</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="esomeprazole-ci">
+      <ul><li>Hypersensibilité aux IPP ou benzimidazoles</li><li>Association avec rilpivirine, nelfinavir, atazanavir (↓ absorption antiviraux)</li><li>Prudence : hypoMg préexistante, cirrhose (réduire dose)</li></ul>
+      <div class="key-fact" style="border-left-color:#dc2626;">⚠️ Interactions : clopidogrel (↓ activation via CYP2C19 — préférer pantoprazole ou rabéprazole) · Méthotrexate (↑ toxicité) · Warfarine (surveillance INR)</div>
+    </div>
+    <div class="tab-panel" id="esomeprazole-suivi">
+      <ul><li>Magnésémie si usage > 1 an ou si diurétiques/digoxine</li><li>Réévaluer indication aux 6–12 mois — tenter sevrage si faible risque</li><li>B12 si usage prolongé + population à risque (végétaliens, gériatrie)</li><li>Toujours à la dose minimale efficace</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-lansoprazole" data-search="lansoprazole prevacid ipp inhibiteur pompe protons">
+  <div class="drug-header" style="background:#7b3fa0;">
+    <div><div class="drug-name">Lansoprazole (Prevacid®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Lansoprazole</div></div>
+    <div class="drug-pharmacol">IPP — CYP2C19</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('lansoprazole','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('lansoprazole','doses',this)">Doses</button><button class="tab-btn" onclick="showTab('lansoprazole','ai',this)">Particularités</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="lansoprazole-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>IPP standard — liaison irréversible H⁺/K⁺-ATPase. Métabolisme CYP2C19. Efficacité similaire à oméprazole à doses équivalentes.</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>RGO, œsophagite érosive</li><li>UGD actif (gastrique ou duodénal)</li><li>Syndrome de Zollinger-Ellison</li><li>Éradication H. pylori</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="lansoprazole-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>RGO / maintien</td><td>15–30 mg DIE</td></tr>
+        <tr><td>Œsophagite érosive</td><td>30 mg DIE × 8 sem.</td></tr>
+        <tr><td>UGD duodénal actif</td><td>15 mg DIE × 4 sem.</td></tr>
+        <tr><td>UGD gastrique actif</td><td>30 mg DIE × 8 sem.</td></tr>
+        <tr><td>Zollinger-Ellison</td><td>60 mg DIE (ajuster)</td></tr>
+      </tbody></table>
+      <div class="key-fact">💊 Capsules 15/30 mg à avaler entières (ou granules saupoudrés) — 30 min avant repas</div>
+    </div>
+    <div class="tab-panel" id="lansoprazole-ai">
+      <ul><li>Profil EI similaire aux autres IPP</li><li>Interaction clopidogrel (CYP2C19) — préférer pantoprazole ou rabéprazole</li><li>Ajustement si insuffisance hépatique sévère (max 30 mg/j)</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-rabeprazole" data-search="rabeprazole pariet ipp inhibiteur pompe protons">
+  <div class="drug-header" style="background:#7b3fa0;">
+    <div><div class="drug-name">Rabéprazole (Pariet®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Rabéprazole sodique</div></div>
+    <div class="drug-pharmacol">IPP — métabolisme non enzymatique</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('rabeprazole','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('rabeprazole','doses',this)">Doses</button><button class="tab-btn" onclick="showTab('rabeprazole','ai',this)">Particularités</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="rabeprazole-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>IPP — majorité du métabolisme NON enzymatique (non-CYP2C19) → efficacité plus prévisible et indépendante du polymorphisme génétique. Avantage dans populations à métabolisme rapide.</p></div>
+        <div class="info-box green"><h4>Avantage clé</h4><ul><li>✅ 1er choix si clopidogrel (↓ interaction CYP2C19)</li><li>✅ Efficacité plus constante inter-individus</li><li>✅ Pas d'ajustement si polymorphisme CYP2C19</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="rabeprazole-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>RGO</td><td>20 mg DIE</td></tr>
+        <tr><td>UGD actif</td><td>20 mg DIE × 4–8 sem.</td></tr>
+        <tr><td>Maintien</td><td>10–20 mg DIE</td></tr>
+        <tr><td>Zollinger-Ellison</td><td>60–120 mg/j</td></tr>
+      </tbody></table>
+    </div>
+    <div class="tab-panel" id="rabeprazole-ai">
+      <ul><li>Comprimés 10/20 mg — ne pas écraser ni croquer</li><li>Préféré avec clopidogrel vs oméprazole/ésoméprazole/lansoprazole</li><li>Profil EI similaire aux autres IPP</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-dexlansoprazole" data-search="dexlansoprazole dexilant ipp double liberation">
+  <div class="drug-header" style="background:#7b3fa0;">
+    <div><div class="drug-name">Dexlansoprazole (Dexilant®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Dexlansoprazole</div></div>
+    <div class="drug-pharmacol">IPP — double libération retardée</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('dexlansoprazole','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('dexlansoprazole','doses',this)">Doses</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="dexlansoprazole-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme particulier</h4><p>Formulation à <strong>double libération retardée</strong> : pic plasmatique à 1–2 h (pH 5,5) ET à 4–5 h (pH 6,5) → couverture prolongée et continue sans nécessiter de prise à jeun.</p></div>
+        <div class="info-box green"><h4>Avantage clinique</h4><ul><li>✅ Peut être pris <strong>n'importe quand</strong> (sans contrainte horaire)</li><li>RGO réfractaire avec symptômes nocturnes</li><li>Observance améliorée</li></ul></div>
+      </div>
+      <div class="key-fact">⚠️ Interaction CYP2C19 — prudence avec clopidogrel. Capsules peuvent être ouvertes et saupoudrées sur aliments mous.</div>
+    </div>
+    <div class="tab-panel" id="dexlansoprazole-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>Œsophagite érosive (guérison)</td><td>60 mg DIE × 8 sem.</td></tr>
+        <tr><td>Maintien œsophagite</td><td>30 mg DIE</td></tr>
+        <tr><td>RGO symptomatique</td><td>30 mg DIE × 4 sem.</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-famotidine" data-search="famotidine pepcid anti-h2 antihistaminique h2 récepteur histamine">
+  <div class="drug-header" style="background:#0a7a4e;">
+    <div><div class="drug-name">Famotidine (Pepcid®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Famotidine</div></div>
+    <div class="drug-pharmacol">Anti-H2 (bloqueur récepteur H2)</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('famotidine','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('famotidine','doses',this)">Doses</button><button class="tab-btn" onclick="showTab('famotidine','es',this)">EI & Interactions</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="famotidine-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Bloqueur compétitif réversible des récepteurs H2 de l'histamine sur la cellule pariétale → ↓ sécrétion HCl. Bloque seulement la voie histamine (pas gastrine, pas acétylcholine).</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>RGO léger / symptômes occasionnels</li><li>UGD (efficacité modérée : duodénal 70 %, gastrique 50 %)</li><li>Dyspepsie non ulcéreuse</li><li>HDH : 2e ligne si IPP IV indisponible</li><li>MVL : brûlures d'estomac ponctuelles</li></ul></div>
+      </div>
+      <div class="key-fact" style="border-left-color:#f59e0b;">⚠️ Tachyphylaxie : désensibilisation progressive des récepteurs H2 avec usage prolongé → perte d'efficacité. Les IPP restent supérieurs pour la plupart des indications.</div>
+    </div>
+    <div class="tab-panel" id="famotidine-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>RGO / symptômes</td><td>10–20 mg au besoin ou BID</td></tr>
+        <tr><td>UGD duodénal actif</td><td>40 mg HS ou 20 mg BID × 8 sem.</td></tr>
+        <tr><td>UGD gastrique actif</td><td>40 mg HS × 12 sem.</td></tr>
+        <tr><td>Maintenance</td><td>20 mg HS</td></tr>
+        <tr><td>IRC (ClCr &lt; 50)</td><td>Réduire dose 50 % ou allonger intervalle</td></tr>
+      </tbody></table>
+      <div class="key-fact">💊 Formes : 10/20/40 mg PO ; 20 mg IV. Ranitidine retirée (sept. 2019 — contamination NDMA). Cimétidine : nombreuses interactions CYP450, éviter.</div>
+    </div>
+    <div class="tab-panel" id="famotidine-es">
+      <ul><li>Bien toléré — céphalée, constipation, diarrhée (rares)</li><li>Cimétidine (éviter) : inhibiteur CYP1A2/2C19/2D6/3A4 → coumadin, phénytoïne, diazépam, théophylline</li><li>Famotidine : moins d'interactions que cimétidine</li><li>Ajustement impératif si IRC (élimination rénale ++)</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-antiacides" data-search="antiacide tums calcium carbonate maalox diovol gelusil gaviscon neutralisation acide">
+  <div class="drug-header" style="background:#374151;">
+    <div><div class="drug-name">Antiacides (Tums / Diovol / Gaviscon)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">CaCO₃, Mg(OH)₂ + Al(OH)₃, acide alginique</div></div>
+    <div class="drug-pharmacol">Neutralisation chimique HCl — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('antiacides','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('antiacides','es',this)">EI & Interactions</button><button class="tab-btn" onclick="showTab('antiacides','ai',this)">Comparatif</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="antiacides-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Neutralisation chimique rapide mais brève du HCl gastrique (≠ inhibition sécrétion). Ex : CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O. Gaviscon : acide alginique + antiacide → flottaison (barrière mécanique sur l'acide pocket).</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>Brûlures d'estomac occasionnelles</li><li>RGO léger symptomatique (usage au besoin)</li><li>Dyspepsie post-prandiale</li><li>Pyrosis de grossesse (Gaviscon ou CaCO₃ préférés)</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="antiacides-es">
+      <table class="conc-table"><thead><tr><th>Base</th><th>EI principal</th><th>Interaction</th></tr></thead><tbody>
+        <tr><td>Calcium (Tums)</td><td>Milk-alkali syndrome si &gt; 4 g/j (hypercalcémie + alcalose + IRA)</td><td>↓ absorption fer, cipro.</td></tr>
+        <tr><td>Magnésium (Diovol, Maalox)</td><td>Diarrhée — éviter si IRC</td><td>↓ absorption tétracyclines, fluoroquinolones</td></tr>
+        <tr><td>Aluminium (Amphojel)</td><td>Constipation — accumulation si IRC</td><td>↓ absorption de nombreux Rx (prise à distance de 2h)</td></tr>
+        <tr><td>Acide alginique (Gaviscon)</td><td>Bien toléré</td><td>Contient sodium — prudence HTA/IC</td></tr>
+      </tbody></table>
+      <div class="key-fact" style="border-left-color:#dc2626;">🚨 Prendre à distance ≥ 2 h des autres médicaments (absorption ↓ via ↑ pH ou chélation)</div>
+    </div>
+    <div class="tab-panel" id="antiacides-ai">
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Base</th><th>Efficacité</th><th>Note</th></tr></thead><tbody>
+        <tr><td>Tums</td><td>CaCO₃</td><td>+++ (1er)</td><td>Supplément Ca si grossesse</td></tr>
+        <tr><td>Diovol, Maalox</td><td>Mg + Al</td><td>++</td><td>Effets combinés se compensent</td></tr>
+        <tr><td>Amphojel</td><td>Al seul</td><td>+</td><td>Chélation phosphate (dialyse)</td></tr>
+        <tr><td>Gaviscon</td><td>Acide alginique ± Mg/Al</td><td>+</td><td>Flottant, utile RGO postural</td></tr>
+      </tbody></table>
+      <div class="key-fact">⏱️ Début d'action rapide (5–15 min) mais durée courte (30–60 min à jeun, 1–3 h post-repas). Efficacité : Ca &gt; Mg &gt; Al</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-sucralfate" data-search="sucralfate sulcrate cytoprotecteur gastroprotecteur muqueuse">
+  <div class="drug-header" style="background:#374151;">
+    <div><div class="drug-name">Sucralfate (Sulcrate®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Saccharose-sulfate d'aluminium</div></div>
+    <div class="drug-pharmacol">Cytoprotecteur gastroduodénal</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('sucralfate','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('sucralfate','doses',this)">Doses</button><button class="tab-btn" onclick="showTab('sucralfate','ai',this)">Interactions</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="sucralfate-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme (unique)</h4><p>Base d'aluminium, faiblement absorbé. Visqueux et adhésif : haute affinité pour la muqueuse endommagée → <strong>barrière physique protectrice</strong>. Inhibe la pepsine · ↑ mucus (prostaglandines) · ↑ bicarbonates · absorbe sels biliaires.</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>UGD actif (alternative aux IPP)</li><li>Prévention ulcère de stress (USI)</li><li>Mucite oro-pharyngée (suspension)</li><li>Œsophagite de radiation</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="sucralfate-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>UGD actif</td><td>1 g QID à jeun (1h avant repas et HS) × 4–8 sem.</td></tr>
+        <tr><td>Maintenance</td><td>1 g BID</td></tr>
+        <tr><td>Prévention USI</td><td>1 g q6h</td></tr>
+      </tbody></table>
+      <div class="key-fact">⚠️ Prendre à JEUN (1 h avant repas) — efficacité réduite en présence d'aliments. Constipation fréquente (Al).</div>
+    </div>
+    <div class="tab-panel" id="sucralfate-ai">
+      <ul><li>↓ absorption de nombreux médicaments (prendre à ≥ 2 h d'intervalle) : fluoroquinolones, tétracyclines, lévothyroxine, digoxine, kétoconazole</li><li>Accumulation d'aluminium si IRC sévère — éviter ou utiliser avec prudence</li><li>Pas d'interactions médicamenteuses majeures via CYP</li></ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MVL / PSN ═══════════════════════════════════════════════════════════ -->
+
+<div class="drug-card" id="card-acetaminophen" data-search="acétaminophène acetaminophen tylenol paracétamol douleur fièvre analgésique">
+  <div class="drug-header" style="background:#b45309;">
+    <div><div class="drug-name">Acétaminophène (Tylenol®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Paracétamol — MVL (+ Annexe 1 à hautes doses)</div></div>
+    <div class="drug-pharmacol">Analgésique / Antipyrétique</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('acetaminophen','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('acetaminophen','doses',this)">Doses & formes</button><button class="tab-btn" onclick="showTab('acetaminophen','es',this)">Sécurité & Surdose</button><button class="tab-btn" onclick="showTab('acetaminophen','ci',this)">CI & Interactions</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="acetaminophen-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Inhibition centrale de la synthèse des prostaglandines (COX-3) + modulation système endocannabinoïde. Pas d'effet anti-inflammatoire périphérique significatif. Antipyrétique via centre thermorégulateur hypothalamique.</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>Douleur légère à modérée (tête, muscle, dents)</li><li>Fièvre</li><li>Douleur chronique (arthrose) — 1er choix si CI aux AINS</li><li>Analgésie périopératoire (multimodale)</li></ul></div>
+      </div>
+      <div class="key-fact" style="border-left-color:#dc2626;">🚨 Plus de <strong>500 produits</strong> contiennent de l'acétaminophène au Canada → risque de surdose cumulée non intentionnelle. <strong>Toujours vérifier les produits combinés</strong> (Tylenol Rhume, Sinutab, Percocet, etc.)</div>
+    </div>
+    <div class="tab-panel" id="acetaminophen-doses">
+      <table class="conc-table"><thead><tr><th>Population</th><th>Dose max/jour</th></tr></thead><tbody>
+        <tr><td>Adulte (court terme)</td><td>4 g/j</td></tr>
+        <tr><td>Adulte (long terme)</td><td>3,2 g/j</td></tr>
+        <tr><td>Gériatrie</td><td>2–2,6 g/j</td></tr>
+        <tr><td>Alcoolisme actif</td><td>2 g/j (court terme uniquement)</td></tr>
+        <tr><td>Insuffisance hépatique</td><td>2–3 g/j (selon sévérité)</td></tr>
+      </tbody></table>
+      <div class="key-fact">💊 Formulations : 325 mg (régulier) · 500 mg (extra-fort) · 650 mg (arthritique) · suppositoires 350/650 mg</div>
+      <div class="key-fact">⏱️ Posologie habituelle : 325–1000 mg q4–6h selon indication et formulation</div>
+    </div>
+    <div class="tab-panel" id="acetaminophen-es">
+      <div class="info-grid">
+        <div class="info-box red"><h4>Hépatotoxicité (surdose)</h4><p>Surdose → saturation voie de glucuronoconjugaison → métabolite toxique NAPQI s'accumule → nécrose hépatocentrilobulaire. Antidote : <strong>N-acétylcystéine IV</strong> (nomogramme Rumack-Matthew).</p></div>
+        <div class="info-box orange"><h4>Déficience G6PD</h4><p>Hémolyse possible — précaution. Surdose par cumul : vérifier TOUS les médicaments pris (combinés fréquents).</p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="acetaminophen-ci">
+      <ul><li>Hépatopathie grave, insuffisance hépatique sévère</li><li>Hypersensibilité</li></ul>
+      <p><strong>Interactions importantes :</strong></p>
+      <ul><li>Warfarine → ↑ INR (mécanisme incertain) — surveillance si dose régulière</li><li>Alcool + acétaminophène → ↑ NAPQI → hépatotoxicité</li><li>Carbamazépine, phénytoïne → induction CYP → ↑ NAPQI</li><li>Isoniazide → ↑ hépatotoxicité</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-ains_mvl" data-search="ibuprofène advil naproxène aleve ains mvl anti-inflammatoire non stéroïdien aspirine asa">
+  <div class="drug-header" style="background:#b45309;">
+    <div><div class="drug-name">AINS MVL (Advil / Aleve / AAS)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Ibuprofène · Naproxène sodique · Acide acétylsalicylique</div></div>
+    <div class="drug-pharmacol">AINS — inhibiteurs COX non sélectifs (MVL)</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('ains_mvl','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('ains_mvl','doses',this)">Doses MVL</button><button class="tab-btn" onclick="showTab('ains_mvl','es',this)">Risques majeurs</button><button class="tab-btn" onclick="showTab('ains_mvl','ci',this)">CI & Interactions</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="ains_mvl-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Inhibition non sélective COX-1 et COX-2 → ↓ prostaglandines, prostacycline, thromboxanes. COX-1 : cytoprotection gastrique, homéostasie vasculaire, agrégation plaquettaire, fonction rénale. COX-2 : inflammation.</p></div>
+        <div class="info-box orange"><h4>Triple Whammy ⚠️</h4><p><strong>AINS + IECA/ARA + Diurétique = IRA</strong><br/>AINS → vasoconstriction afférente<br/>IECA → dilatation efférente<br/>Diurétique → ↓ volume<br/>→ hypoperfusion rénale sévère</p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="ains_mvl-doses">
+      <table class="conc-table"><thead><tr><th>Médicament</th><th>Dose</th><th>Max MVL/j</th></tr></thead><tbody>
+        <tr><td>Ibuprofène (Advil, Motrin)</td><td>200–400 mg q4–6h</td><td>1 200 mg</td></tr>
+        <tr><td>Naproxène sodique (Aleve)</td><td>220 mg q8–12h</td><td>440 mg</td></tr>
+        <tr><td>AAS (Aspirine)</td><td>325–500 mg q4–6h</td><td>4 000 mg</td></tr>
+      </tbody></table>
+      <div class="key-fact">⚠️ Doses MVL &lt; doses prescription. Ibuprofène prescription : jusqu'à 3 200 mg/j ; naproxène prescription : jusqu'à 1 500 mg/j</div>
+    </div>
+    <div class="tab-panel" id="ains_mvl-es">
+      <div class="info-grid">
+        <div class="info-box red"><h4>Risque cardiovasculaire</h4><p>↑ risque IDM, AVC, HTA — sauf AAS 80 mg (antiplaquettaire). Éviter si MCAS, IC NYHA III–IV, post-pontage récent. Naproxène = risque CV le plus faible parmi les AINS.</p></div>
+        <div class="info-box orange"><h4>Risque GI</h4><p>Érosions/ulcères gastriques (inhibition COX-1 → ↓ mucus). Gastroprotection IPP recommandée si : ≥ 65 ans, ATCD ulcère, corticostéroïdes, anticoagulants, ISRS.</p></div>
+        <div class="info-box red"><h4>Risque rénal</h4><p>↓ DFG, rétention sodique, HTA, IRA (surtout si DFGe &lt; 30, déshydratation, IC, cirrhose, triple whammy). Contre-indiqués si ClCr &lt; 30 mL/min.</p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="ains_mvl-ci">
+      <p><strong>Contre-indications :</strong></p>
+      <ul><li>Hypersensibilité (dont triade AAS : asthme + polypose + urticaire)</li><li>Pontage aorto-coronarien récent</li><li>IC NYHA III–IV</li><li>Gastropathie active</li><li>ClCr &lt; 30 mL/min</li><li>K⁺ &gt; 5,5 mmol/L</li><li>Grossesse ≥ 28 semaines (fermeture canal artériel)</li></ul>
+      <p><strong>Interactions majeures :</strong></p>
+      <ul><li>AAS 80 mg + ibuprofène → ↓ effet antiplaquettaire (prendre AAS 80 mg au moins 2h avant ibuprofène)</li><li>Anticoagulants/antiplaquettaires/ISRS/corticostéroïdes → ↑ saignement</li><li>Lithium → ↑ concentration (toxicité)</li><li>Méthotrexate (doses antinéoplasiques) → ↑ toxicité MTX</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-methocarbamol" data-search="méthocarbamol robaxin robaxisal relaxant musculaire spasme">
+  <div class="drug-header" style="background:#b45309;">
+    <div><div class="drug-name">Méthocarbamol (Robaxin®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Méthocarbamol — MVL (Robaxisal, Robaxacet)</div></div>
+    <div class="drug-pharmacol">Relaxant musculaire à action centrale — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('methocarbamol','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('methocarbamol','doses',this)">Doses</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="methocarbamol-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Dépresseur du SNC à action centrale — mécanisme exact inconnu. Réduit les spasmes musculaires douloureux sans effet direct sur la fibre musculaire.</p></div>
+        <div class="info-box orange"><h4>EI & Précautions</h4><ul><li>Somnolence, étourdissements, vision brouillée</li><li>Effets anticholinergiques possibles</li><li>Gériatrie : chutes, confusion (prudence)</li><li>Potentialisation alcool/dépresseurs SNC</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="methocarbamol-doses">
+      <table class="conc-table"><thead><tr><th>Médicament</th><th>Dose</th><th>Durée max</th></tr></thead><tbody>
+        <tr><td>Méthocarbamol (Robaxin)</td><td>1 500 mg q6h × 2–3j puis 1 000 mg q6h</td><td>5 jours (max 4 g/j)</td></tr>
+        <tr><td>Orphénadrine (Norflex)</td><td>100 mg q12h</td><td>Court terme</td></tr>
+      </tbody></table>
+      <div class="key-fact">💊 Produits combinés MVL : Robaxacet (+ acétaminophène) · Robaxisal (+ AAS) · Robax Platine (+ ibuprofène) — attention aux duplications analgésiques</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-decongestionnants" data-search="décongestionnant pseudoéphédrine sudafed oxymétazoline xylométazoline otrivin phényléphrine rhume congestion nasale">
+  <div class="drug-header" style="background:#0369a1;">
+    <div><div class="drug-name">Décongestionnants (Sudafed / Otrivin)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Pseudoéphédrine · Oxymétazoline · Xylométazoline</div></div>
+    <div class="drug-pharmacol">Sympathomimétiques α-adrénergiques — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('decongestionnants','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('decongestionnants','doses',this)">Produits & Doses</button><button class="tab-btn" onclick="showTab('decongestionnants','es',this)">Effets indésirables</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="decongestionnants-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Agonistes α-adrénergiques → vasoconstriction muqueuse nasale → ↓ œdème et drainage des sécrétions. Topiques : action locale, absorption systémique minimale. Oraux : distribution systémique → risque cardiovasculaire.</p></div>
+        <div class="info-box red"><h4>Rhinite médicamenteuse ⚠️</h4><p>Congestion rebond à l'arrêt des décongestionnants topiques prolongés. <strong>Max 3 jours</strong>. Sevrage : arrêt brusque OU graduel (1 narine à la fois) OU CS intranasaux.</p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="decongestionnants-doses">
+      <p><strong>Topiques :</strong></p>
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Dose</th><th>Durée max</th></tr></thead><tbody>
+        <tr><td>Oxymétazoline (Drixoral, Dristan)</td><td>q10–12h</td><td>3 jours</td></tr>
+        <tr><td>Xylométazoline (Otrivin)</td><td>q8–10h</td><td>3 jours</td></tr>
+        <tr><td>Phényléphrine (Dristan)</td><td>q4h</td><td>3 jours</td></tr>
+      </tbody></table>
+      <p><strong>Oraux :</strong></p>
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>Pseudoéphédrine (Sudafed)</td><td>60 mg q4–6h, max 240 mg/j</td></tr>
+        <tr><td>Phényléphrine (Sudafed PE)</td><td>10 mg q4h — efficacité remise en doute (FDA 2023)</td></tr>
+      </tbody></table>
+    </div>
+    <div class="tab-panel" id="decongestionnants-es">
+      <ul><li>Topiques (surtout rebond) : rhinite médicamenteuse si &gt; 3 jours</li><li>Oraux : insomnie, nervosité, palpitations, tachycardie, ↑ TA</li><li>Pseudoéphédrine : précurseur méthamphétamine → vendu derrière le comptoir</li><li>CI : MAO actifs ± 14j, HTA non contrôlée, coronaropathie, hypertyroïdie, glaucome à angle fermé</li><li>Grossesse : éviter au 1er trimestre (données insuffisantes)</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-antitussifs" data-search="antitussif dextrométhorphane guaifénésine toux expectorant codéine dxm">
+  <div class="drug-header" style="background:#0369a1;">
+    <div><div class="drug-name">Antitussifs MVL (DXM / Guaifénésine)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Dextrométhorphane · Guaifénésine · Chlophédianol</div></div>
+    <div class="drug-pharmacol">Antitussifs / Expectorants — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('antitussifs','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('antitussifs','doses',this)">Doses</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="antitussifs-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>DXM : antagoniste NMDA + agoniste σ → suppression centrale de la toux. Guaifénésine : expectorant — fluidifie les sécrétions bronchiques. Chlophédianol : action centrale.</p></div>
+        <div class="info-box orange"><h4>Efficacité limitée</h4><ul><li>Traiter la cause sous-jacente (RGO, asthme, IVRS, IECA) en priorité</li><li>DXM : efficacité variable, interactions possibles (CYP2D6/IMAO)</li><li>Guaifénésine : le plus sûr, facilite l'expectoration</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="antitussifs-doses">
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Dose adulte</th><th>Note</th></tr></thead><tbody>
+        <tr><td>Dextrométhorphane</td><td>10–20 mg q4–6h</td><td>Éviter si IMAO ± 14j · interaction ISRS (syndrome sérotoninergique)</td></tr>
+        <tr><td>Guaifénésine</td><td>200–400 mg q4h</td><td>Hydratation ++ pour effet optimal</td></tr>
+        <tr><td>Chlophédianol (Ulone)</td><td>25 mg 3–4×/j</td><td>Efficacité limitée</td></tr>
+      </tbody></table>
+      <div class="key-fact" style="border-left-color:#dc2626;">🚨 DXM + IMAO = syndrome sérotoninergique potentiellement fatal. DXM + fluoxétine/paroxétine (inhibiteurs CYP2D6) → accumulation DXM.</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-antihistaminiques_mvl" data-search="antihistaminique cétirizine loratadine réactin claritin diphenhydramine benadryl allergie rhinite mvl">
+  <div class="drug-header" style="background:#0369a1;">
+    <div><div class="drug-name">Antihistaminiques MVL (Réactin / Claritin)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Cétirizine · Loratadine · Diphenhydramine (2e vs 1ère gén)</div></div>
+    <div class="drug-pharmacol">Antagonistes récepteurs H1 — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('antihistaminiques_mvl','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('antihistaminiques_mvl','doses',this)">Produits & Doses</button><button class="tab-btn" onclick="showTab('antihistaminiques_mvl','ai',this)">1ère vs 2e gén</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="antihistaminiques_mvl-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Agonistes inverses/antagonistes des récepteurs H1 sur muscles lisses, capillaires, glandes exocrines. Efficaces pour : éternuements, prurit, rhinorrhée. <strong>Peu d'effet sur la congestion</strong> (ajouter CS nasaux ou décongestionnant).</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>Rhinite allergique saisonnière/persistante</li><li>Conjonctivite allergique</li><li>Urticaire aiguë / prurit</li><li>Réactions allergiques légères</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="antihistaminiques_mvl-doses">
+      <p><strong>2e génération (1er choix) :</strong></p>
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Dose adulte</th><th>Particularité</th></tr></thead><tbody>
+        <tr><td>Cétirizine (Réactin, Zyrtec)</td><td>10 mg DIE</td><td>Légèrement sédatif chez certains</td></tr>
+        <tr><td>Desloratadine (Aerius)</td><td>5 mg DIE</td><td>Métabolite actif de loratadine (Annexe 2)</td></tr>
+        <tr><td>Loratadine (Claritin)</td><td>10 mg DIE</td><td>Non sédatif, hors-annexe</td></tr>
+        <tr><td>Fexofénadine (Allegra)</td><td>120–180 mg DIE</td><td>Non sédatif — ↓ absorption si jus d'orange</td></tr>
+      </tbody></table>
+      <p><strong>1ère génération (éviter si possible) :</strong></p>
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Dose</th><th>Problèmes</th></tr></thead><tbody>
+        <tr><td>Diphenhydramine (Benadryl)</td><td>25–50 mg q4–6h</td><td>Sédation ++, anticholinergique, tolérance rapide</td></tr>
+        <tr><td>Chlorphéniramine (Chlor-Tripolon)</td><td>4 mg q4–6h</td><td>Sédation ++, effets anticholinergiques</td></tr>
+      </tbody></table>
+    </div>
+    <div class="tab-panel" id="antihistaminiques_mvl-ai">
+      <table class="conc-table"><thead><tr><th>Caractéristique</th><th>1ère génération</th><th>2e génération</th></tr></thead><tbody>
+        <tr><td>Pénétration BHE</td><td>Oui → sédation</td><td>Non → pas de sédation</td></tr>
+        <tr><td>Effets anticholinergiques</td><td>Oui (xérostomie, rétention, constipation, confusion)</td><td>Minimes</td></tr>
+        <tr><td>Tolérance</td><td>Rapide (tachyphylaxie)</td><td>Non</td></tr>
+        <tr><td>Gériatrie</td><td>ÉVITER (Beers criteria)</td><td>Préférer</td></tr>
+        <tr><td>Chutes</td><td>Risque ↑</td><td>Risque ↓</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-cs_nasaux" data-search="corticostéroïde nasal fluticasone flonase mométasone nasonex triamcinolone nasacort rhinite allergique">
+  <div class="drug-header" style="background:#0369a1;">
+    <div><div class="drug-name">Corticostéroïdes nasaux (Flonase / Nasonex)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Fluticasone · Mométasone · Triamcinolone</div></div>
+    <div class="drug-pharmacol">CS intranasaux — 1er choix rhinite allergique</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('cs_nasaux','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('cs_nasaux','doses',this)">Produits & Doses</button><button class="tab-btn" onclick="showTab('cs_nasaux','ai',this)">Utilisation optimale</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="cs_nasaux-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Régulent les mastocytes avant dégranulation → ↓ ALL médiateurs inflammatoires. <strong>Agents les plus efficaces en rhinite allergique</strong> — améliorent TOUS les symptômes incluant congestion et symptômes oculaires. Biodisponibilité systémique très faible.</p></div>
+        <div class="info-box green"><h4>Avantages vs antihistaminiques</h4><ul><li>✅ Efficacité supérieure (surtout congestion)</li><li>✅ Effet sur symptômes oculaires</li><li>✅ Pas de sédation</li><li>✅ 1er choix grossesse (mométasone)</li><li>⏱️ Début d'action : quelques jours · Effet max : 1–2 semaines</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="cs_nasaux-doses">
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Posologie</th><th>Note</th></tr></thead><tbody>
+        <tr><td>Fluticasone propionate (Flonase)</td><td>2 vap/narine DIE</td><td>> 18 ans MVL</td></tr>
+        <tr><td>Mométasone (Nasonex)</td><td>2 vap/narine DIE</td><td><strong>1er choix grossesse/pédiatrie</strong></td></tr>
+        <tr><td>Triamcinolone (Nasacort AQ)</td><td>2 vap/narine DIE</td><td>> 12 ans</td></tr>
+        <tr><td>Budésonide (Rhinocort)</td><td>1–4 vap/narine DIE</td><td>Variable</td></tr>
+      </tbody></table>
+      <div class="key-fact">⚠️ Usage régulier > au besoin. Enseigner la technique d'administration (pointer vers la paroi latérale nasale, pas le septum → épistaxis).</div>
+    </div>
+    <div class="tab-panel" id="cs_nasaux-ai">
+      <ul><li>EI : goût amer, irritation nasale, céphalée, épistaxis (mauvaise technique)</li><li>CI rares : ulcère septum nasal, trauma nasal récent</li><li>Pas de tachyphylaxie (contrairement aux antihistaminiques 1ère gén)</li><li>Rhinite persistante → usage régulier préférable au besoin</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-loperamide" data-search="lopéramide imodium diarrhée antidiarrhéique">
+  <div class="drug-header" style="background:#374151;">
+    <div><div class="drug-name">Lopéramide (Imodium®)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Lopéramide HCl — MVL</div></div>
+    <div class="drug-pharmacol">Antidiarrhéique — agoniste μ-opioïde entérique</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('loperamide','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('loperamide','doses',this)">Doses & CI</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="loperamide-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Agoniste μ-opioïde agissant sur les récepteurs périphériques entériques (ne traverse pas BHE aux doses thérapeutiques) → ↓ péristaltisme + ↑ tonus sphincter anal + ↓ sécrétion intestinale.</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>Diarrhée aiguë non compliquée</li><li>Diarrhée du voyageur</li><li>SII-D (symptômes ponctuels)</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="loperamide-doses">
+      <table class="conc-table"><thead><tr><th>Indication</th><th>Dose</th></tr></thead><tbody>
+        <tr><td>Diarrhée aiguë</td><td>4 mg dose initiale, puis 2 mg après chaque selle molle, max 16 mg/j (max 2 j MVL)</td></tr>
+        <tr><td>Diarrhée chronique (Rx)</td><td>4–8 mg/j en doses fractionnées</td></tr>
+      </tbody></table>
+      <div class="key-fact" style="border-left-color:#dc2626;">🚨 ÉVITER si : fièvre ≥ 38,5°C, selles sanglantes/mucoïdes (infection bactérienne possible), colite pseudomembraneuse, mégacôlon toxique. NE PAS utiliser &gt; 48h en MVL sans évaluation médicale.</div>
+      <div class="key-fact">🔄 Réhydratation orale en parallèle — toujours prioritaire (Pedialyte, Gastrolyte).</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-laxatifs_mvl" data-search="laxatif métamucil psyllium lax-a-day peg polyéthylène glycol séné senokot constipation bisacodyl émollient">
+  <div class="drug-header" style="background:#374151;">
+    <div><div class="drug-name">Laxatifs MVL (Metamucil / Lax-A-Day / Senokot)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Psyllium · PEG · Séné · Bisacodyl · Émollients</div></div>
+    <div class="drug-pharmacol">Laxatifs — classes multiples — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('laxatifs_mvl','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('laxatifs_mvl','classes',this)">Classes & Produits</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="laxatifs_mvl-ov">
+      <div class="info-grid">
+        <div class="info-box green"><h4>1er choix (long terme)</h4><ul><li><strong>Fibres (Metamucil/psyllium)</strong> : sécuritaires à long terme, efficacité prouvée — hydratation essentielle</li><li><strong>PEG (Lax-A-Day, Restoralax)</strong> : osmotique, sécuritaire y compris usage prolongé</li></ul></div>
+        <div class="info-box orange"><h4>Précautions</h4><ul><li>Lait de magnésie : éviter si IRC ou IC</li><li>Stimulants (Séné) : risque dépendance/abus si usage chronique</li><li>Émollients (Colace) : efficacité peu documentée</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="laxatifs_mvl-classes">
+      <table class="conc-table"><thead><tr><th>Classe</th><th>Produit</th><th>Mécanisme</th><th>Usage</th></tr></thead><tbody>
+        <tr><td>Fibres (volumisant)</td><td>Metamucil (psyllium)</td><td>↑ volume selles</td><td>Long terme ✅</td></tr>
+        <tr><td>Osmotique</td><td>Lax-A-Day (PEG 3350)</td><td>Rétention eau luminale</td><td>Long terme ✅</td></tr>
+        <tr><td>Osmotique</td><td>Lait de magnésie</td><td>Osm. + ↑ motilité</td><td>Court terme ; CI IRC/IC</td></tr>
+        <tr><td>Stimulant</td><td>Senokot (séné)</td><td>Stimulation plexus myentérique</td><td>Court terme ; risque dépendance</td></tr>
+        <tr><td>Émollient</td><td>Colace (docusate)</td><td>Surfactant → ramollissement</td><td>Efficacité limitée</td></tr>
+        <tr><td>Lavement</td><td>Fleet (phosphate sodique)</td><td>Distension rectale</td><td>Ponctuel ; CI IRC/IC/EBP</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-hydrocortisone_topique" data-search="hydrocortisone topique crème dermite eczéma dermatite corticostéroïde cutané mvl">
+  <div class="drug-header" style="background:#374151;">
+    <div><div class="drug-name">Hydrocortisone topique</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Hydrocortisone 0,5–1 % — MVL (classe 6–7)</div></div>
+    <div class="drug-pharmacol">Corticostéroïde topique de faible puissance — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('hydrocortisone_topique','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('hydrocortisone_topique','ai',this)">Effets & Précautions</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="hydrocortisone_topique-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme & Indications</h4><p>Anti-inflammatoire topique. Inhibe phospholipase A2 → ↓ prostaglandines et leucotriènes. Indications MVL : dermite de contact · eczéma léger · prurit cutané · piqûres d'insectes · éruptions légères.</p></div>
+        <div class="info-box green"><h4>Classification puissance CS topiques</h4><p>Classe 1 (très forte) → Classe 7 (faible). MVL = faible puissance (6–7) : hydrocortisone 0,5–1 %. Prescription requise pour classes 1–5.</p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="hydrocortisone_topique-ai">
+      <ul><li>Application 1–2×/j sur région affectée — usage temporaire</li><li>EI : atrophie cutanée (surtout si fort et prolongé), dermatite de contact (hypersensibilité rare)</li><li>Éviter visage, plis, muqueuses, peau lésée sans avis médical</li><li>Grossesse : usage ponctuel faible puissance acceptable</li></ul>
+      <div class="key-fact">📌 Dermatite de contact allergique aux antibiotiques topiques (bacitracine, néomycine) est la cause la plus fréquente de DCA médicamenteuse — éviter usage prophylactique.</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-antifongiques_topiques" data-search="clotrimazole canesten miconazole tolnaftate antifongique topique pied athléte candidose vaginale">
+  <div class="drug-header" style="background:#374151;">
+    <div><div class="drug-name">Antifongiques topiques (Canesten / Miconazole)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Clotrimazole · Miconazole · Tolnaftate — MVL</div></div>
+    <div class="drug-pharmacol">Antifongiques azolés topiques — MVL</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('antifongiques_topiques','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('antifongiques_topiques','doses',this)">Produits & Doses</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="antifongiques_topiques-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Mécanisme</h4><p>Inhibition ergostérol (membrane fongique) via blocage 14α-déméthylase (azolés) → lyse cellulaire fongique. Tolnaftate : mécanisme différent, efficace dermatophytes seulement.</p></div>
+        <div class="info-box green"><h4>Indications</h4><ul><li>Pied d'athlète (tinea pedis)</li><li>Teigne corporelle (tinea corporis)</li><li>Candidose cutanée (clotrimazole, miconazole)</li><li>Candidose vaginale (Canesten vaginal)</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="antifongiques_topiques-doses">
+      <table class="conc-table"><thead><tr><th>Produit</th><th>Indication</th><th>Posologie</th></tr></thead><tbody>
+        <tr><td>Clotrimazole 1 % (Canesten)</td><td>Pied d'athlète, candidose cutanée, vaginale</td><td>Appliquer BID × 2–4 sem.</td></tr>
+        <tr><td>Miconazole 2 % crème</td><td>Pied d'athlète, candidose</td><td>BID × 2–4 sem.</td></tr>
+        <tr><td>Tolnaftate 1 %</td><td>Pied d'athlète seulement (dermatophytes)</td><td>BID × 2–4 sem.</td></tr>
+      </tbody></table>
+      <div class="key-fact">⚠️ Continuer 2 semaines après résolution des symptômes pour prévenir la récidive. Si inefficace après 4 semaines → consulter.</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-millepertuis" data-search="millepertuis hypericum perforatum st-john wort CYP3A4 inducteur interaction médicamenteuse psn">
+  <div class="drug-header" style="background:#065f46;">
+    <div><div class="drug-name">Millepertuis (Hypericum perforatum)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">St-John's Wort — PSN</div></div>
+    <div class="drug-pharmacol">PSN — Inducteur puissant CYP3A4</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('millepertuis','ov',this)">Vue d'ensemble</button><button class="tab-btn" onclick="showTab('millepertuis','inter',this)">Interactions ⚠️</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="millepertuis-ov">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Utilisation & Efficacité</h4><p>Utilisé pour dépression légère à modérée, anxiété, troubles du sommeil. Efficacité : méta-analyses positives pour dépression légère. Mécanisme : inhibition recapture sérotonine/noradrénaline/dopamine.</p></div>
+        <div class="info-box red"><h4>⚠️ INDUCTEUR PUISSANT CYP3A4</h4><p>Inducteur le plus cliniquement significatif parmi les PSN. Augmente significativement le métabolisme de nombreux médicaments → <strong>↓↓↓ concentrations plasmatiques → perte d'efficacité.</strong></p></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="millepertuis-inter">
+      <div class="key-fact" style="border-left-color:#dc2626;">🚨 Peut rendre inefficaces des médicaments CRITIQUES — toujours questionner l'utilisation</div>
+      <table class="conc-table"><thead><tr><th>Médicament affecté</th><th>Conséquence clinique</th></tr></thead><tbody>
+        <tr><td>Contraceptifs oraux</td><td>↓ efficacité → grossesse non désirée</td></tr>
+        <tr><td>Warfarine</td><td>↓ INR → risque thromboembolique</td></tr>
+        <tr><td>Immunosuppresseurs (cyclosporine, tacrolimus)</td><td>↓ niveaux → rejet de greffe</td></tr>
+        <tr><td>Antirétroviraux (INTI, IP)</td><td>↓ efficacité → résistance VIH</td></tr>
+        <tr><td>Antinéoplasiques (imatinib, etc.)</td><td>↓ efficacité traitement cancer</td></tr>
+        <tr><td>ISRS/IRSN</td><td>Syndrome sérotoninergique (induction + effet additif)</td></tr>
+        <tr><td>Digoxine</td><td>↓ concentration → ↓ efficacité</td></tr>
+        <tr><td>Benzodiazépines</td><td>↓ efficacité anxiolytique/sédative</td></tr>
+      </tbody></table>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-psn_interactions" data-search="psn vitamines minéraux interactions calcium magnésium fer vitamine K warfarine lévothyroxine plantes cyp">
+  <div class="drug-header" style="background:#065f46;">
+    <div><div class="drug-name">Interactions Vitamines & Minéraux</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Calcium · Magnésium · Fer · Vit. K · Vit. D · B12</div></div>
+    <div class="drug-pharmacol">PSN — Interactions cliniquement significatives</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('psn_interactions','vit',this)">Vitamines</button><button class="tab-btn" onclick="showTab('psn_interactions','min',this)">Minéraux</button><button class="tab-btn" onclick="showTab('psn_interactions','cyp',this)">Plantes & CYP</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="psn_interactions-vit">
+      <table class="conc-table"><thead><tr><th>Vitamine</th><th>Interaction / Note</th></tr></thead><tbody>
+        <tr><td>Vitamine K</td><td>↔ Warfarine (INR) — surveillance si changement de consommation</td></tr>
+        <tr><td>Vitamine B6 (pyridoxine)</td><td>↔ Isoniazide → carence B6 → supplémentation prophylactique</td></tr>
+        <tr><td>Vitamine A</td><td>+ Rétinoïdes → risque hypervitaminose A (tératogène)</td></tr>
+        <tr><td>Vitamine E</td><td>+ Warfarine → ↑ INR / saignement</td></tr>
+        <tr><td>Vitamine D</td><td>↑ absorption calcium — pertinent si hypercalcémie, granulomatoses</td></tr>
+        <tr><td>Vitamine C</td><td>↑ absorption fer non-hémique</td></tr>
+        <tr><td>Vitamine B12</td><td>IPP/antiacides → ↓ absorption B12 (usage prolongé)</td></tr>
+      </tbody></table>
+    </div>
+    <div class="tab-panel" id="psn_interactions-min">
+      <table class="conc-table"><thead><tr><th>Minéral</th><th>Interaction clinique</th></tr></thead><tbody>
+        <tr><td>Calcium</td><td>↓ absorption ciprofloxacine (40–85 %) · ↓ absorption lévothyroxine · Prendre à ≥ 2–4h d'intervalle</td></tr>
+        <tr><td>Magnésium</td><td>↓ absorption fluoroquinolones, tétracyclines · ↑ risque hypomagnésémie si IPP prolongés</td></tr>
+        <tr><td>Fer</td><td>↓ absorption fluoroquinolones, tétracyclines, lévothyroxine (prendre à 2h) · ↑ par vit. C · ↓ par IPP/antiacides</td></tr>
+        <tr><td>Zinc</td><td>↓ absorption tétracyclines, fluoroquinolones</td></tr>
+      </tbody></table>
+      <div class="key-fact">📌 Règle : prendre les minéraux/antiacides à ≥ 2 h de la plupart des antibiotiques, lévothyroxine, et antiparasitaires</div>
+    </div>
+    <div class="tab-panel" id="psn_interactions-cyp">
+      <table class="conc-table"><thead><tr><th>Plante</th><th>CYP3A4</th><th>CYP2D6</th><th>CYP1A2</th></tr></thead><tbody>
+        <tr><td>Millepertuis ⚠️</td><td>🔴 Induction (fort)</td><td>—</td><td>—</td></tr>
+        <tr><td>Ginseng asiatique</td><td>🔵 Inhibition</td><td>🔵 Inhibition</td><td>—</td></tr>
+        <tr><td>Thé vert</td><td>🟡 Induction</td><td>—</td><td>🔵 Inhibition</td></tr>
+        <tr><td>Canneberge</td><td>🔵 Inhibition</td><td>—</td><td>🔵 Inhibition</td></tr>
+        <tr><td>Curcuma</td><td>—</td><td>🔵 Inhibition</td><td>🔵 Inhibition</td></tr>
+      </tbody></table>
+      <div class="key-fact">🔍 Référence : <strong>NatMed Pro</strong> (Natural Medicines Database) — via BAnQ ou bibliothèques universitaires. Également : Rx Vigilance (section PSN)</div>
+    </div>
+  </div>
+</div>
+
+<div class="drug-card" id="card-psn_populaires" data-search="ashwagandha créatine psn produit santé naturel supplément stress sommeil muscle pré-workout">
+  <div class="drug-header" style="background:#065f46;">
+    <div><div class="drug-name">PSN Populaires (Ashwagandha / Créatine)</div><div style="font-size:12px;opacity:.75;margin-top:2px;">Ashwagandha · Créatine · Pré-workout · PSN à risque</div></div>
+    <div class="drug-pharmacol">PSN — Profil sécurité & Interactions</div>
+  </div>
+  <div class="drug-tabs"><button class="tab-btn active" onclick="showTab('psn_populaires','ash',this)">Ashwagandha</button><button class="tab-btn" onclick="showTab('psn_populaires','crea',this)">Créatine</button><button class="tab-btn" onclick="showTab('psn_populaires','prework',this)">Pré-workout ⚠️</button></div>
+  <div class="drug-panels">
+    <div class="tab-panel active" id="psn_populaires-ash">
+      <div class="info-grid">
+        <div class="info-box blue"><h4>Ashwagandha (Withania somnifera)</h4><p>Utilisé pour : stress, anxiété, sommeil, cognition, performance athlétique, AR, diabète, hypothyroïdie, dysfonction sexuelle. Probablement sûr : ≤ 1 250 mg/j × 6 mois.</p></div>
+        <div class="info-box red"><h4>Sécurité ⚠️</h4><ul><li>🚨 Grossesse : PROBABLEMENT DANGEREUX (effets abortifs) — CONTRE-INDIQUÉ</li><li>EI graves rares : hépatite aiguë, insuffisance hépatique, décès rapportés</li><li>Structure similaire digoxine → faux positif digoxinémie</li><li>Interactions : antidiabétiques (↑ hypoglycémie) · antihypertenseurs (↑ hypotension) · immunosuppresseurs</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="psn_populaires-crea">
+      <div class="info-grid">
+        <div class="info-box green"><h4>Créatine</h4><p>Amine endogène (reins/foie). Stockée comme phosphocréatine dans le muscle → régénération rapide ATP. Efficacité prouvée : performance athlétique anaérobie, force musculaire, sarcopénie (personnes âgées + résistance).</p></div>
+        <div class="info-box orange"><h4>Effets indésirables</h4><ul><li>Crampes, déshydratation, gain de poids (rétention eau intramusculaire)</li><li>↑ créatinine sérique (artéfact — pas néphrotoxicité réelle)</li><li>Dose : 3–5 g/j (entretien) ; charge : 20 g/j × 5–7j optionnel</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-panel" id="psn_populaires-prework">
+      <div class="key-fact" style="border-left-color:#dc2626;">🚨 Composition souvent nébuleuse — concentrations non déclarées. Risque de contamination documentée (stéroïdes anabolisants, AINS, glycosides cardiaques, métaux lourds, DMAA/DMHA interdits).</div>
+      <table class="conc-table"><thead><tr><th>Type</th><th>Ingrédients à surveiller</th><th>Risques</th></tr></thead><tbody>
+        <tr><td>Pré-workout</td><td>Caféine haute dose, Yohimbe, synephrine, DMAA/DMHA</td><td>HTA, arythmies, anxiété, décès rares</td></tr>
+        <tr><td>Amaigrissants</td><td>Diurétiques, stimulants multiples, agents thyroïdiens non déclarés</td><td>Déséquilibre électrolytique, tachycardie</td></tr>
+      </tbody></table>
+      <div class="key-fact">📌 Toujours questionner systématiquement l'utilisation de PSN, pré-workout, protéines en poudre — les patients ne les déclarent souvent pas spontanément.</div>
+    </div>
+  </div>
+</div>
+
+</main>
 </div>
 
 <script>
